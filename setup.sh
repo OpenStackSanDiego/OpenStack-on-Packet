@@ -89,8 +89,14 @@ IMG_NAME=CirrOS-0.3.5
 OS_DISTRO=cirros
 wget -q -O - $IMG_URL | \
 glance  --os-image-api-version 2 image-create --protected True --name $IMG_NAME \
-        --visibility public --disk-format raw --container-format bare --property os_distro=$OS_DISTRO --progress      
+        --visibility public --disk-format raw --container-format bare --property os_distro=$OS_DISTRO --progress    
 	
+IMG_URL=http://shell.openstack.us/Images/IoT.img
+IMG_NAME=IoT
+OS_DISTRO=centos
+wget -q -O - $IMG_URL | \
+glance  --os-image-api-version 2 image-create --protected True --name $IMG_NAME \
+        --visibility public --disk-format raw --container-format bare --property os_distro=$OS_DISTRO --progress	
 	
 	
 #GATEWAY=`ip route list | egrep "^default" | cut -d' ' -f 3`
