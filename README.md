@@ -1,16 +1,6 @@
-# Building a Cloud to run Containers
-
+# Building an OpenStack Cloud on Packet Host
 
 ## Overview
-
-
-| |
-|----------|
-| Container | Container | Container | ... |
-| COE-1 | COE-2 | ... |
-|OpenStack VM-1, VM-2, VM-3... |
-|OpenStack Controller |
-|     Bare Metal Server 32GB, 120TB, 4 core Xeon (CentOS 7)          |
 
 
 
@@ -75,7 +65,7 @@ When connecting using PuTTY on Windows, use the following instructions to login 
 
 Once the you're logged in as root execute the following commands. This installs the underlying cloud and container orchestration engines (COE)
 
-* wget https://raw.githubusercontent.com/OpenStackSanDiego/magnum-container-cloud/master/setup.sh
+* wget https://raw.githubusercontent.com/OpenStackSanDiego/OpenStack-on-Packet/master/setup.sh
 * sh setup.sh
 * more keystonerc_admin
 
@@ -88,52 +78,6 @@ Restart the system.
 ## Log into the Cloud GUI
 
 Once everything has rebooted. Connect to the GUI at: http://YOUR_SERVER_IP/. Use the login admin with the OS_PASSWORD from above.
-
-## Startup a Kubernetes Cluster
-
-Create a new keypair called Magnum
-
-Project->Key Pairs->Create Key Pair
-Keypair Name: Magnum
-
-Create a Kubernetes Cluster Template:
-
-* Project->Container Infra->Cluster Templates>+ Create Cluster Templates
-* Cluster Template Name: Kubernetes-Atomic
-* Container Orchestration Engine: Kubernetes
-* Public: Checked
-* Disabled TLS: Checked
-* Image: Fedora-Atomic-25
-* Keypair: Magnum
-* External Network ID: Public
-* DNS: 8.8.8.8
-* Floating IP: Checked
-* Submit
-
-Create a Kubernetes Cluster based upon the template.
-
-* Cluster Templates->Kubernetes-Atomic->Start Cluster
-* Cluster Name: Kubernetes-Atomic-Dev
-* Master Count: 1
-* Node Count: 2
-* Sumbit
-
-Click through to the see the list of compute instances, network security groups, and networks created.
-
-Log into the Kubernetes master node via SSH. Use the Magnum key created above.
-
-## Startup a Docker Swarm Cluster
-
-Repleate the steps above with a new template and cluster. Replace the COE with "Docker Swarm"
-
-Click through to the see the list of compute instances, network security groups, and networks created.
-
-Log into the Docker master node via SSH. Use the Magnum key created above.
-
-Startup the basic Docker container to verify functionality (this required root access).
-
-* sudo su -
-* docker run helloworld
 
 
 ## Shutting it all down
