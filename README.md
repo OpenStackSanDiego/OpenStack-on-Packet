@@ -4,16 +4,6 @@
 ## Overview
 
 
-| |
-|----------|
-| Container | Container | Container | ... |
-| COE-1 | COE-2 | ... |
-|OpenStack VM-1, VM-2, VM-3... |
-|OpenStack Controller |
-|     Bare Metal Server 32GB, 120TB, 4 core Xeon (CentOS 7)          |
-
-
-
 ## Prerequisites
 
 For this lab, you'll need a desktop/laptop (Windows, Mac, or Linux) with an SSH client and a web browser.
@@ -29,6 +19,14 @@ Install the Windows package since you'll need one of the PuTTY utilities (putty 
 For this workshop, you'll be using physical servers provided by Packet. Specifically, you'll be using one of their 'Type 1' servers, a 32 GB, 120GB x 2 SSD (RAID-1), 4 core Xeon server. Packet provides their servers by the hour. With code SDOPENSTACK, you'll get $25 of free credit. The 'Type 1' is $0.40/hour so the $25 credit will get you 62 hours of CPU use. Be sure to shut down the server at the end of the workshop!
 
 Sign up at www.packet.net and use code SDOPENSTACK. You'll need to provide a credit card or PayPal account to get the $25 in free credit.
+
+## Setting up 
+
+If you are connecting from a Windows machine, you can use these instructions on how to generate SSH keys.
+
+https://help.packet.net/quick-start/generate-ssh-keys
+
+Make sure you upload your new key into your new Packet project before you start the server!
 
 ## Startup a Bare Metal Server
 
@@ -50,11 +48,9 @@ OS:  CentOS 7
 
 Location: Parisppany, NJ
 
-If you are connecting from a Windows machine, you can use these instructions on how to generate SSH keys.
+Manage: Subnet Size->/28  Save & Contine
 
-https://help.packet.net/quick-start/generate-ssh-keys
-
-Make sure you upload your new key into Packet before you start the server!
+Deploy
 
 It'll take about 8 minutes for the new server to start up.
 
