@@ -1,5 +1,4 @@
-# Building a Cloud to run Containers
-
+# Building an OpenStack Cloud from Bare Metal
 
 ## Overview
 
