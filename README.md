@@ -72,7 +72,7 @@ When connecting using PuTTY on Windows, use the following instructions to login 
 Once the you're logged in as root execute the following commands. This installs the underlying cloud and container orchestration engines (COE)
 
 ````
-wget https://raw.githubusercontent.com/OpenStackSanDiego/magnum-container-cloud/master/setup.sh
+wget https://raw.githubusercontent.com/OpenStackSanDiego/OpenStack-on-Packet-Host/master/setup.sh
 sh setup.sh
 more keystonerc_admin
 ````
