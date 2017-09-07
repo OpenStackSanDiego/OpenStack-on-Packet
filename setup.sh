@@ -111,6 +111,6 @@ ovs-vsctl add-port br-ex bond0
 ip route add default via $GATEWAY dev br-ex
 	
 
-
+echo "networking has changed. recommend rebooting at this time to restart all the cloud services."
   
 
